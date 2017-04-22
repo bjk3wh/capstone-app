@@ -20,11 +20,11 @@ class CarePlanStoreManager: NSObject {
     
     let store: OCKCarePlanStore
     
-    //var insights: [OCKInsightItem] {
-    //    return insightsBuilder.insights
-    //}
+    var insights: [OCKInsightItem] {
+        return insightsBuilder.insights
+    }
     
-    //fileprivate let insightsBuilder: InsightsBuilder
+    fileprivate let insightsBuilder: InsightsBuilder
     
     // MARK: Initialization
     
@@ -45,7 +45,7 @@ class CarePlanStoreManager: NSObject {
          Create an `InsightsBuilder` to build insights based on the data in
          the store.
          */
-        //insightsBuilder = InsightsBuilder(carePlanStore: store)
+        insightsBuilder = InsightsBuilder(carePlanStore: store)
         
         super.init()
         
@@ -53,17 +53,17 @@ class CarePlanStoreManager: NSObject {
         store.delegate = self
         
         // Start to build the initial array of insights.
-        //updateInsights()
+        updateInsights()
     }
     
     
-    //func updateInsights() {
-    //    insightsBuilder.updateInsights { [weak self] completed, newInsights in
-    //        // If new insights have been created, notifiy the delegate.
-    //        guard let storeManager = self, let newInsights = newInsights , completed else { return }
-    //        storeManager.delegate?.carePlanStoreManager(storeManager, didUpdateInsights: newInsights)
-    //    }
-    //}
+    func updateInsights() {
+        insightsBuilder.updateInsights { [weak self] completed, newInsights in
+            // If new insights have been created, notifiy the delegate.
+            guard let storeManager = self, let newInsights = newInsights , completed else { return }
+            storeManager.delegate?.carePlanStoreManager(storeManager, didUpdateInsights: newInsights)
+        }
+    }
 }
 
 

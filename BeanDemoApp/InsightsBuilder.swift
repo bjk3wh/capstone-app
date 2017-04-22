@@ -66,13 +66,18 @@ class InsightsBuilder {
 
         /*
             Create an operation to query for events for the previous week and
-            current weeks' `BackPain` assessment.
+            current weeks' `Pain` assessment.
          */
-        let backPainEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.backPain.rawValue,
+        let painEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                   activityIdentifier: ActivityType.pain.rawValue,
                                                                    startDate: queryDateRange.start,
                                                                    endDate: queryDateRange.end)
+        
+        // Create an operation to query for events from `TestProtocol` assessment
+        let testProtocolEventsOperation = QueryActivityEventsOperation(store: carePlanStore, activityIdentifier: ActivityType.testProtocol.rawValue, startDate: queryDateRange.start, endDate: queryDateRange.end)
 
+        // Create an operation to query for events from `Weight` assessment
+        let weightEventsOperation = QueryActivityEventsOperation(store: carePlanStore, activityIdentifier: ActivityType.weight.rawValue, startDate: queryDateRange.start, endDate: queryDateRange.end)
         /*
             Create a `BuildInsightsOperation` to create insights from the data
             collected by query operations.
@@ -86,7 +91,9 @@ class InsightsBuilder {
         let aggregateDataOperation = BlockOperation {
             // Copy the queried data from the query operations to the `BuildInsightsOperation`.
             buildInsightsOperation.medicationEvents = medicationEventsOperation.dailyEvents
-            buildInsightsOperation.backPainEvents = backPainEventsOperation.dailyEvents
+            buildInsightsOperation.painEvents = painEventsOperation.dailyEvents
+            buildInsightsOperation.testProtocolEvents = testProtocolEventsOperation.dailyEvents
+            buildInsightsOperation.weightEvents = weightEventsOperation.dailyEvents
         }
         
         /*
@@ -110,7 +117,7 @@ class InsightsBuilder {
         
         // The aggregate operation is dependent on the query operations.
         aggregateDataOperation.addDependency(medicationEventsOperation)
-        aggregateDataOperation.addDependency(backPainEventsOperation)
+        aggregateDataOperation.addDependency(painEventsOperation)
         
         // The `BuildInsightsOperation` is dependent on the aggregate operation.
         buildInsightsOperation.addDependency(aggregateDataOperation)
@@ -118,7 +125,7 @@ class InsightsBuilder {
         // Add all the operations to the operation queue.
         updateOperationQueue.addOperations([
             medicationEventsOperation,
-            backPainEventsOperation,
+            painEventsOperation,
             aggregateDataOperation,
             buildInsightsOperation
         ], waitUntilFinished: false)

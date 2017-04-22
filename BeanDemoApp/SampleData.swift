@@ -14,7 +14,8 @@ class SampleData: NSObject {
         GoForAWalk(),
         TestProtocol(),
         Pain(),
-        Weight()
+        Weight(),
+        NumberOfSteps()
     ]
     
     /**

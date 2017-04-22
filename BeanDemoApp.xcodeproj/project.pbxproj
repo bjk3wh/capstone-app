@@ -29,6 +29,11 @@
 		82BFA7BF1EA000AB00D0DC15 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7BE1EA000AB00D0DC15 /* RootViewController.swift */; };
 		82BFA7CB1EA00D1300D0DC15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82BFA7C91EA00D1300D0DC15 /* Main.storyboard */; };
 		82BFA7D11EA00D9000D0DC15 /* custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82BFA7CF1EA00D9000D0DC15 /* custom.storyboard */; };
+		82BFA7F11EA94F3700D0DC15 /* QueryActivityEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7F01EA94F3700D0DC15 /* QueryActivityEventsOperation.swift */; };
+		82BFA7F31EA94F4800D0DC15 /* BuildInsightsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7F21EA94F4800D0DC15 /* BuildInsightsOperation.swift */; };
+		82BFA7F51EA94F8C00D0DC15 /* InsightsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7F41EA94F8C00D0DC15 /* InsightsBuilder.swift */; };
+		82BFA7FD1EA9522A00D0DC15 /* NSCalendar+Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7FC1EA9522A00D0DC15 /* NSCalendar+Dates.swift */; };
+		82BFA7FF1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7FE1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift */; };
 		82C101771E88936100B1B393 /* Bean_iOS_OSX_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101761E88936100B1B393 /* Bean_iOS_OSX_SDK.framework */; };
 		82C101881E88A8BA00B1B393 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101851E88A88C00B1B393 /* CareKit.framework */; };
 		82C101891E88A8BA00B1B393 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101851E88A88C00B1B393 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -144,6 +149,11 @@
 		82BFA7BE1EA000AB00D0DC15 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		82BFA7CA1EA00D1300D0DC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82BFA7D01EA00D9000D0DC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/custom.storyboard; sourceTree = "<group>"; };
+		82BFA7F01EA94F3700D0DC15 /* QueryActivityEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryActivityEventsOperation.swift; sourceTree = "<group>"; };
+		82BFA7F21EA94F4800D0DC15 /* BuildInsightsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildInsightsOperation.swift; sourceTree = "<group>"; };
+		82BFA7F41EA94F8C00D0DC15 /* InsightsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsBuilder.swift; sourceTree = "<group>"; };
+		82BFA7FC1EA9522A00D0DC15 /* NSCalendar+Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Dates.swift"; sourceTree = "<group>"; };
+		82BFA7FE1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OCKInsightItem+EmptyMessage.swift"; sourceTree = "<group>"; };
 		82C101761E88936100B1B393 /* Bean_iOS_OSX_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bean_iOS_OSX_SDK.framework; path = "../../../Library/Developer/Xcode/DerivedData/BeanDemoApp-fsznqdpgqjqmuxcqidicdxhdlqbt/Build/Products/Debug-iphoneos/Bean-iOS-OSX-SDK/Bean_iOS_OSX_SDK.framework"; sourceTree = "<group>"; };
 		82C1017E1E88A88C00B1B393 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		82C101DD1E88B13300B1B393 /* FirstTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTab.swift; sourceTree = "<group>"; };
@@ -237,15 +247,10 @@
 				823D044F1E7B3EC700916794 /* Info.plist */,
 				82BFA78D1E9D4F6D00D0DC15 /* CarePlanStoreManager.swift */,
 				82BFA7911E9D5CD800D0DC15 /* SampleData.swift */,
-				82BFA7931E9D5E3700D0DC15 /* Activity.swift */,
-				82BFA79C1E9D683E00D0DC15 /* TakeMedication.swift */,
-				82BFA7A01E9D6C0200D0DC15 /* GoForAWalk.swift */,
-				82BFA7A21E9D71D400D0DC15 /* Assessment.swift */,
-				82BFA7B61E9D781400D0DC15 /* NumberOfSteps.swift */,
-				82BFA7B81E9D781B00D0DC15 /* Pain.swift */,
-				82BFA7BA1E9D782100D0DC15 /* Weight.swift */,
-				82BFA7BC1E9D7DBB00D0DC15 /* TestProtocol.swift */,
-				82BFA7951E9D63DC00D0DC15 /* Colors.swift */,
+				82BFA8001EA9530300D0DC15 /* Insights */,
+				82BFA8011EA9531100D0DC15 /* Interventions */,
+				82BFA8021EA9533800D0DC15 /* Assessments */,
+				82BFA8031EA9534900D0DC15 /* Extras */,
 			);
 			path = BeanDemoApp;
 			sourceTree = "<group>";
@@ -275,6 +280,48 @@
 				82BFA7AD1E9D744A00D0DC15 /* ResearchKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		82BFA8001EA9530300D0DC15 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				82BFA7F41EA94F8C00D0DC15 /* InsightsBuilder.swift */,
+				82BFA7F21EA94F4800D0DC15 /* BuildInsightsOperation.swift */,
+				82BFA7F01EA94F3700D0DC15 /* QueryActivityEventsOperation.swift */,
+			);
+			name = Insights;
+			sourceTree = "<group>";
+		};
+		82BFA8011EA9531100D0DC15 /* Interventions */ = {
+			isa = PBXGroup;
+			children = (
+				82BFA7931E9D5E3700D0DC15 /* Activity.swift */,
+				82BFA79C1E9D683E00D0DC15 /* TakeMedication.swift */,
+				82BFA7A01E9D6C0200D0DC15 /* GoForAWalk.swift */,
+			);
+			name = Interventions;
+			sourceTree = "<group>";
+		};
+		82BFA8021EA9533800D0DC15 /* Assessments */ = {
+			isa = PBXGroup;
+			children = (
+				82BFA7A21E9D71D400D0DC15 /* Assessment.swift */,
+				82BFA7B61E9D781400D0DC15 /* NumberOfSteps.swift */,
+				82BFA7B81E9D781B00D0DC15 /* Pain.swift */,
+				82BFA7BA1E9D782100D0DC15 /* Weight.swift */,
+				82BFA7BC1E9D7DBB00D0DC15 /* TestProtocol.swift */,
+			);
+			name = Assessments;
+			sourceTree = "<group>";
+		};
+		82BFA8031EA9534900D0DC15 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				82BFA7FE1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift */,
+				82BFA7FC1EA9522A00D0DC15 /* NSCalendar+Dates.swift */,
+				82BFA7951E9D63DC00D0DC15 /* Colors.swift */,
+			);
+			name = Extras;
 			sourceTree = "<group>";
 		};
 		82C1017F1E88A88C00B1B393 /* Products */ = {
@@ -627,19 +674,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				82BFA7B91E9D781B00D0DC15 /* Pain.swift in Sources */,
+				82BFA7F11EA94F3700D0DC15 /* QueryActivityEventsOperation.swift in Sources */,
 				82BFA7A11E9D6C0200D0DC15 /* GoForAWalk.swift in Sources */,
 				82C101DE1E88B13300B1B393 /* FirstTab.swift in Sources */,
 				82BFA79D1E9D683E00D0DC15 /* TakeMedication.swift in Sources */,
 				82BFA7961E9D63DC00D0DC15 /* Colors.swift in Sources */,
 				82BFA7BB1E9D782100D0DC15 /* Weight.swift in Sources */,
+				82BFA7F51EA94F8C00D0DC15 /* InsightsBuilder.swift in Sources */,
 				82BFA7BF1EA000AB00D0DC15 /* RootViewController.swift in Sources */,
+				82BFA7FF1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift in Sources */,
 				82BFA7921E9D5CD800D0DC15 /* SampleData.swift in Sources */,
 				82BFA7941E9D5E3700D0DC15 /* Activity.swift in Sources */,
 				823D04441E7B3EC700916794 /* AppDelegate.swift in Sources */,
+				82BFA7FD1EA9522A00D0DC15 /* NSCalendar+Dates.swift in Sources */,
 				82BFA7A31E9D71D400D0DC15 /* Assessment.swift in Sources */,
 				82BFA78E1E9D4F6D00D0DC15 /* CarePlanStoreManager.swift in Sources */,
 				82C101E21E88B18C00B1B393 /* SecondTab.swift in Sources */,
 				82C101E41E88B1A200B1B393 /* ThirdTab.swift in Sources */,
+				82BFA7F31EA94F4800D0DC15 /* BuildInsightsOperation.swift in Sources */,
 				82BFA7BD1E9D7DBB00D0DC15 /* TestProtocol.swift in Sources */,
 				82BFA7B71E9D781400D0DC15 /* NumberOfSteps.swift in Sources */,
 			);

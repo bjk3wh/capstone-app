@@ -43,7 +43,7 @@ class RootViewController: UITabBarController {
     
     fileprivate var symptomTrackerViewController: OCKSymptomTrackerViewController!
     
-    //fileprivate var insightsViewController: OCKInsightsViewController!
+    fileprivate var insightsViewController: OCKInsightsViewController!
     
     fileprivate var connectViewController: OCKConnectViewController!
     
@@ -57,13 +57,13 @@ class RootViewController: UITabBarController {
         
         careCardViewController = createCareCardViewController()
         symptomTrackerViewController = createSymptomTrackerViewController()
-        //insightsViewController = createInsightsViewController()
+        insightsViewController = createInsightsViewController()
         connectViewController = createConnectViewController()
         
         self.viewControllers = [
             UINavigationController(rootViewController: careCardViewController),
             UINavigationController(rootViewController: symptomTrackerViewController),
-            //UINavigationController(rootViewController: insightsViewController),
+            UINavigationController(rootViewController: insightsViewController),
             UINavigationController(rootViewController: connectViewController)
         ]
         
@@ -73,7 +73,7 @@ class RootViewController: UITabBarController {
 
     // MARK: Convenience
     
-    /*
+    
     fileprivate func createInsightsViewController() -> OCKInsightsViewController {
         // Create an `OCKInsightsViewController` with sample data.
         let headerTitle = NSLocalizedString("Weekly Charts", comment: "")
@@ -85,7 +85,7 @@ class RootViewController: UITabBarController {
         
         return viewController
     }
- */
+ 
     
     fileprivate func createCareCardViewController() -> OCKCareCardViewController {
         let viewController = OCKCareCardViewController(carePlanStore: storeManager.store)
@@ -143,7 +143,7 @@ extension RootViewController: OCKSymptomTrackerViewControllerDelegate {
             present(taskViewController, animated: true, completion: nil)
         }
         // if it's the arduino test, load the custom testing scene
-        // disregard swift warning; it works
+        // disregard compiler warning; it works
         else if let sampleAssessment = sampleData.activityWithType(activityType) as? BeanTest {
             let customStoryboard = UIStoryboard(name: "custom", bundle: nil)
             let customViewController = customStoryboard.instantiateInitialViewController() as! FirstTab
@@ -178,6 +178,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
         // Build an `OCKCarePlanEventResult` that can be saved into the `OCKCarePlanStore`.
         let carePlanResult = sampleAssessment.buildResultForCarePlanEvent(event, taskResult: taskViewController.result)
         
+        // Don't care about this at the moment
         // Check assessment can be associated with a HealthKit sample.
         /*
         if let healthSampleBuilder = sampleAssessment as? HealthSampleBuilder {
@@ -267,6 +268,6 @@ extension RootViewController: CarePlanStoreManagerDelegate {
     /// Called when the `CarePlanStoreManager`'s insights are updated.
     func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
         // Update the insights view controller with the new insights.
-        //insightsViewController.items = insights
+        insightsViewController.items = insights
     }
 }

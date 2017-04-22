@@ -252,7 +252,13 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
             }
         case 6: //complete
             testTimer.invalidate()
-            let results = OCKCarePlanEventResult.init(valueString: "\(max1)", unitString: "/32767", userInfo: nil)
+            let transferFunction: Float = Float(max1)/32767
+            let microstrain: Float = 0.5*(1/(0.5 - transferFunction)-2)
+            let newtonsPerMicrostrain: Float = 0.9383 // taken from fitting linear trendline to strain gauge 2 vs FZ from run 5, constrain intercept to 0 (strain gauge 4 has a conversion of 3.3746)
+            let poundsPerNewton: Float = 2.2/9.8 // 2.2 pounds is 1 kg, which weighs 9.8 newtons
+            let poundsOnPlate: Float = microstrain*newtonsPerMicrostrain*poundsPerNewton
+            let poundsResult = Int(poundsOnPlate)
+            let results = OCKCarePlanEventResult.init(valueString: "\(poundsResult)", unitString: "/32767", userInfo: nil)
             store.update(event, with: results, state: .completed, completion: {(success,event,error) -> Void in
                 guard success else {
                 fatalError("could not update the care plan store")

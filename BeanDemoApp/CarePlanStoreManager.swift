@@ -70,11 +70,11 @@ class CarePlanStoreManager: NSObject {
 
 extension CarePlanStoreManager: OCKCarePlanStoreDelegate {
     func carePlanStoreActivityListDidChange(_ store: OCKCarePlanStore) {
-        //updateInsights()
+        updateInsights()
     }
     
     func carePlanStore(_ store: OCKCarePlanStore, didReceiveUpdateOf event: OCKCarePlanEvent) {
-        //updateInsights()
+        updateInsights()
     }
 }
 

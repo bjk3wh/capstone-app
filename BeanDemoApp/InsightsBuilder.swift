@@ -118,6 +118,9 @@ class InsightsBuilder {
         // The aggregate operation is dependent on the query operations.
         aggregateDataOperation.addDependency(medicationEventsOperation)
         aggregateDataOperation.addDependency(painEventsOperation)
+        aggregateDataOperation.addDependency(testProtocolEventsOperation)
+        aggregateDataOperation.addDependency(weightEventsOperation)
+
         
         // The `BuildInsightsOperation` is dependent on the aggregate operation.
         buildInsightsOperation.addDependency(aggregateDataOperation)
@@ -126,6 +129,8 @@ class InsightsBuilder {
         updateOperationQueue.addOperations([
             medicationEventsOperation,
             painEventsOperation,
+            testProtocolEventsOperation,
+            weightEventsOperation,
             aggregateDataOperation,
             buildInsightsOperation
         ], waitUntilFinished: false)

@@ -380,13 +380,14 @@ class BuildInsightsOperation: Operation {
         }
         
         var weightAvg: Float = 0
-        if (weightCount==0) {
+        if (weightCount != 0) {
             weightAvg = Float(weightSum)/Float(weightCount)
         }
         
         if (testAvg > 0 && weightAvg > 0) {
             let loadRatio: Float = testAvg/weightAvg
-            let insight = OCKMessageItem(title: "Weight Bearing", text: "Your implant is bearing \(loadRatio) times your weight when you walk.", tintColor: Colors.blue.color, messageType: .tip)
+            let formattedLoad = String(format: "%.2f", loadRatio)
+            let insight = OCKMessageItem(title: "Weight Bearing", text: "Your implant is bearing \(formattedLoad) times your weight when you walk.", tintColor: Colors.blue.color, messageType: .tip)
             return insight
         } else {
             let insight = OCKMessageItem(title: "Weight Bearing", text: "We can't find any data for this week.  Input your weight and run a weight bearing test to see your results.", tintColor: Colors.blue.color, messageType: .alert)

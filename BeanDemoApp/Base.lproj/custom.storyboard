@@ -35,7 +35,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="Nbd-OW-vQT"/>
                                                     <constraint firstAttribute="width" constant="230" id="w3u-yW-1ks"/>
                                                 </constraints>
-                                                <state key="normal" title="Touch me"/>
+                                                <state key="normal" title="Start"/>
                                                 <connections>
                                                     <action selector="toggleButton:" destination="Zrd-4g-Xnw" eventType="touchUpInside" id="GR3-dR-5kJ"/>
                                                 </connections>
@@ -69,54 +69,46 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Tvb-ha-ras">
                                 <rect key="frame" x="56" y="431" width="263" height="206"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Time Elapsed: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="w6E-6s-gub">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="144.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Nhm-33-6lK"/>
-                                            <constraint firstAttribute="width" constant="200" id="ahX-gj-IRC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Max 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wQ-YB-Nn6">
-                                        <rect key="frame" x="0.0" y="144.5" width="49" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Max 2: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH7-ni-0FB">
-                                        <rect key="frame" x="0.0" y="165" width="55.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Max 3:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgN-Yz-vpA">
-                                        <rect key="frame" x="0.0" y="185.5" width="51.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Time Elapsed: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="w6E-6s-gub">
+                                        <rect key="frame" x="0.0" y="0.0" width="263" height="206"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="w6E-6s-gub" firstAttribute="centerX" secondItem="Tvb-ha-ras" secondAttribute="centerX" id="tGO-M8-U1f"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-M4-XKX">
-                                <rect key="frame" x="120" y="20" width="135" height="30"/>
+                                <rect key="frame" x="120" y="20" width="135" height="102.5"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="finishButton:" destination="Zrd-4g-Xnw" eventType="touchUpInside" id="d6F-aG-WZy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When standing, press Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOz-DX-SK5">
+                                <rect key="frame" x="46" y="222.5" width="283" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tvb-ha-ras" firstAttribute="leading" secondItem="6yq-KB-86S" secondAttribute="leadingMargin" constant="40" id="0OW-xG-3TX"/>
                             <constraint firstItem="jks-Ow-Ylc" firstAttribute="centerY" secondItem="6yq-KB-86S" secondAttribute="centerY" constant="3" id="3MN-Dd-51D"/>
                             <constraint firstItem="pTZ-M4-XKX" firstAttribute="leading" secondItem="6yq-KB-86S" secondAttribute="leading" constant="120" id="7xX-tV-3vd"/>
+                            <constraint firstItem="jks-Ow-Ylc" firstAttribute="top" secondItem="xOz-DX-SK5" secondAttribute="bottom" constant="30" id="H3g-Do-WP0"/>
                             <constraint firstAttribute="trailing" secondItem="pTZ-M4-XKX" secondAttribute="trailing" constant="120" id="IrO-4S-JL1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tvb-ha-ras" secondAttribute="trailing" constant="40" id="KVP-ty-pHF"/>
                             <constraint firstItem="pTZ-M4-XKX" firstAttribute="top" secondItem="6yq-KB-86S" secondAttribute="topMargin" constant="20" id="Ode-aH-QVf"/>
+                            <constraint firstItem="xOz-DX-SK5" firstAttribute="leading" secondItem="6yq-KB-86S" secondAttribute="leadingMargin" constant="30" id="c4r-dj-IKj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xOz-DX-SK5" secondAttribute="trailing" constant="30" id="cUa-7q-H4y"/>
                             <constraint firstItem="tFe-Dj-Nv5" firstAttribute="top" secondItem="Tvb-ha-ras" secondAttribute="bottom" constant="30" id="d1p-bc-Tp7"/>
+                            <constraint firstItem="xOz-DX-SK5" firstAttribute="top" secondItem="pTZ-M4-XKX" secondAttribute="bottom" constant="100" id="gSR-ln-o8N"/>
                             <constraint firstItem="pTZ-M4-XKX" firstAttribute="top" secondItem="6yq-KB-86S" secondAttribute="top" constant="20" id="ijY-jP-jfT"/>
+                            <constraint firstItem="jks-Ow-Ylc" firstAttribute="top" secondItem="xOz-DX-SK5" secondAttribute="bottom" constant="30" id="pYw-53-LrC"/>
                             <constraint firstItem="Tvb-ha-ras" firstAttribute="top" secondItem="jks-Ow-Ylc" secondAttribute="bottom" constant="30" id="te9-VQ-FE1"/>
                             <constraint firstItem="jks-Ow-Ylc" firstAttribute="centerX" secondItem="6yq-KB-86S" secondAttribute="centerX" constant="3" id="zUx-Ni-PUD"/>
                         </constraints>
@@ -124,9 +116,7 @@
                     <connections>
                         <outlet property="buttonTextLabel" destination="wXJ-EU-eiw" id="A0a-YL-k4f"/>
                         <outlet property="finishButtonLabel" destination="pTZ-M4-XKX" id="7nK-sn-3Dj"/>
-                        <outlet property="maxLabel1" destination="7wQ-YB-Nn6" id="h7s-5k-F9z"/>
-                        <outlet property="maxLabel2" destination="dH7-ni-0FB" id="vxO-F0-Prx"/>
-                        <outlet property="maxLabel3" destination="fgN-Yz-vpA" id="EmQ-mM-hpJ"/>
+                        <outlet property="instructionLabel" destination="xOz-DX-SK5" id="1e8-MR-1CJ"/>
                         <outlet property="timerLabel" destination="w6E-6s-gub" id="gRw-ET-fvl"/>
                     </connections>
                 </viewController>

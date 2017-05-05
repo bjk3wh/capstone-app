@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E5C5BB34E79708E22A4B1E9 /* Pods_BeanDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D413E7F6EE8DE5FDDC7CD541 /* Pods_BeanDemoApp.framework */; };
 		823D04441E7B3EC700916794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D04431E7B3EC700916794 /* AppDelegate.swift */; };
-		823D044B1E7B3EC700916794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823D044A1E7B3EC700916794 /* Assets.xcassets */; };
 		823D044E1E7B3EC700916794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823D044C1E7B3EC700916794 /* LaunchScreen.storyboard */; };
 		823D04591E7B3EC800916794 /* BeanDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D04581E7B3EC800916794 /* BeanDemoAppTests.swift */; };
 		823D04641E7B3EC800916794 /* BeanDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D04631E7B3EC800916794 /* BeanDemoAppUITests.swift */; };
@@ -34,6 +33,7 @@
 		82BFA7F51EA94F8C00D0DC15 /* InsightsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7F41EA94F8C00D0DC15 /* InsightsBuilder.swift */; };
 		82BFA7FD1EA9522A00D0DC15 /* NSCalendar+Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7FC1EA9522A00D0DC15 /* NSCalendar+Dates.swift */; };
 		82BFA7FF1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA7FE1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift */; };
+		82BFA8091EAECEA500D0DC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82BFA8081EAECEA500D0DC15 /* Assets.xcassets */; };
 		82C101771E88936100B1B393 /* Bean_iOS_OSX_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101761E88936100B1B393 /* Bean_iOS_OSX_SDK.framework */; };
 		82C101881E88A8BA00B1B393 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101851E88A88C00B1B393 /* CareKit.framework */; };
 		82C101891E88A8BA00B1B393 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82C101851E88A88C00B1B393 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,7 +125,6 @@
 		6AFCA90BF3D7B75C631EF2C9 /* Pods-BeanDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeanDemoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeanDemoAppTests/Pods-BeanDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		823D04401E7B3EC700916794 /* BeanDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823D04431E7B3EC700916794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		823D044A1E7B3EC700916794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823D044D1E7B3EC700916794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823D044F1E7B3EC700916794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823D04541E7B3EC800916794 /* BeanDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeanDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +153,7 @@
 		82BFA7F41EA94F8C00D0DC15 /* InsightsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsBuilder.swift; sourceTree = "<group>"; };
 		82BFA7FC1EA9522A00D0DC15 /* NSCalendar+Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Dates.swift"; sourceTree = "<group>"; };
 		82BFA7FE1EA9523100D0DC15 /* OCKInsightItem+EmptyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OCKInsightItem+EmptyMessage.swift"; sourceTree = "<group>"; };
+		82BFA8081EAECEA500D0DC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C101761E88936100B1B393 /* Bean_iOS_OSX_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bean_iOS_OSX_SDK.framework; path = "../../../Library/Developer/Xcode/DerivedData/BeanDemoApp-fsznqdpgqjqmuxcqidicdxhdlqbt/Build/Products/Debug-iphoneos/Bean-iOS-OSX-SDK/Bean_iOS_OSX_SDK.framework"; sourceTree = "<group>"; };
 		82C1017E1E88A88C00B1B393 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		82C101DD1E88B13300B1B393 /* FirstTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTab.swift; sourceTree = "<group>"; };
@@ -235,6 +235,7 @@
 		823D04421E7B3EC700916794 /* BeanDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				82BFA8081EAECEA500D0DC15 /* Assets.xcassets */,
 				823D044C1E7B3EC700916794 /* LaunchScreen.storyboard */,
 				82BFA7C91EA00D1300D0DC15 /* Main.storyboard */,
 				82BFA7CF1EA00D9000D0DC15 /* custom.storyboard */,
@@ -243,7 +244,6 @@
 				82C101DD1E88B13300B1B393 /* FirstTab.swift */,
 				82C101E11E88B18C00B1B393 /* SecondTab.swift */,
 				82C101E31E88B1A200B1B393 /* ThirdTab.swift */,
-				823D044A1E7B3EC700916794 /* Assets.xcassets */,
 				823D044F1E7B3EC700916794 /* Info.plist */,
 				82BFA78D1E9D4F6D00D0DC15 /* CarePlanStoreManager.swift */,
 				82BFA7911E9D5CD800D0DC15 /* SampleData.swift */,
@@ -508,9 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				823D044E1E7B3EC700916794 /* LaunchScreen.storyboard in Resources */,
-				823D044B1E7B3EC700916794 /* Assets.xcassets in Resources */,
 				82BFA7CB1EA00D1300D0DC15 /* Main.storyboard in Resources */,
 				82BFA7D11EA00D9000D0DC15 /* custom.storyboard in Resources */,
+				82BFA8091EAECEA500D0DC15 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

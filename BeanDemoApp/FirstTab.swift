@@ -40,10 +40,11 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
     
     @IBOutlet weak var buttonTextLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var maxLabel1: UILabel!
-    @IBOutlet weak var maxLabel2: UILabel!
-    @IBOutlet weak var maxLabel3: UILabel!
+    //@IBOutlet weak var maxLabel1: UILabel!
+    //@IBOutlet weak var maxLabel2: UILabel!
+    //@IBOutlet weak var maxLabel3: UILabel!
     @IBOutlet weak var finishButtonLabel: UIButton!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,9 +190,9 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
     }
     
     func updateMaxText() {
-        maxLabel1.text = "Max 1: \(max1)"
-        maxLabel2.text = "Max 2: \(max2)"
-        maxLabel3.text = "Max 3: \(max3)"
+        //maxLabel1.text = "Max 1: \(max1)"
+        //maxLabel2.text = "Max 2: \(max2)"
+        //maxLabel3.text = "Max 3: \(max3)"
     }
     
     func testarino() { //called every
@@ -203,6 +204,7 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
             testStatus = 6
         }
         updateStatusText(status: testStatus)
+        
         switch (testStatus){
         case 1: //ready to test
             sendSerialData(beanState: testRequest)
@@ -252,13 +254,17 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
             }
         case 6: //complete
             testTimer.invalidate()
-            let transferFunction: Float = Float(max1)/32767
-            let microstrain: Float = 0.5*(1/(0.5 - transferFunction)-2)
+            let Vi: Float = yourBean?.batteryVoltage as! Float
+            let gain: Float = 4
+            // int reading from ADC is referenced to 2.048 V, need to convert to Vo/Vi
+            // so multiply by reference/excitation
+            let transferFunction: Float = Float(max1)/32767*(2.048/Vi)/gain
+            let microstrain: Float = (1/(0.5 - transferFunction)-2)*(1000000/2.15)
             let newtonsPerMicrostrain: Float = 0.9383 // taken from fitting linear trendline to strain gauge 2 vs FZ from run 5, constrain intercept to 0 (strain gauge 4 has a conversion of 3.3746)
             let poundsPerNewton: Float = 2.2/9.8 // 2.2 pounds is 1 kg, which weighs 9.8 newtons
             let poundsOnPlate: Float = microstrain*newtonsPerMicrostrain*poundsPerNewton
             let poundsResult = Int(poundsOnPlate)
-            let results = OCKCarePlanEventResult.init(valueString: "\(poundsResult)", unitString: "/32767", userInfo: nil)
+            let results = OCKCarePlanEventResult.init(valueString: "\(poundsResult)", unitString: "pounds", userInfo: nil)
             store.update(event, with: results, state: .completed, completion: {(success,event,error) -> Void in
                 guard success else {
                 fatalError("could not update the care plan store")
@@ -275,6 +281,8 @@ class FirstTab: UIViewController, PTDBeanManagerDelegate, PTDBeanDelegate/*, OCK
         /* OK.  So nest Bean functions in a while loop won't work.  Can I swing a continuous function with a timer or something?  Or some sort of ISR?  Goto isn't in Swift.  This really sucks.
         */
         if (isTestReady()) {
+            instructionLabel.text = ""
+            yourBean?.readBatteryVoltage()
             testTimer.invalidate() // in case it was already running
             testTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(FirstTab.testarino), userInfo: nil, repeats: true)
         }
